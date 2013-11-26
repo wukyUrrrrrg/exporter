@@ -1,0 +1,10 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<% form_for :search, :url => admin_export_contacts_path, :html => {:method => :put}  do |f| %>
+  <%= f.label :completed_at_gte, 'Дата начала выгрузки: ' %>
+  <%= f.text_field :completed_at_gte, :size => 12, :value => 1.month.ago.to_date.to_s %> 
+  <br />
+  <%= submit_tag t('export') %>
+<% end -%>
+
+
